@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NECTAR-X | Autonomous Pollination Swarm Control</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config={theme:{extend:{colors:{
+      void:"#020617",amberbee:"#f59e0b",uv:"#8b5cf6",cyan:"#22d3ee",signal:"#84cc16"
+    }}}};
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <header class="hero-banner">
+    <img src="./bee-banner.png" alt="Bee banner">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="eyebrow">NECTAR-X / AUTONOMOUS POLLINATION CONTROL</div>
+      <h1>Autonomous Neuromorphic Swarm Robotics</h1>
+      <p>Precision Crop Pollination • Edge AI • Mesh Communication • Honeybee Ommatidial Vision</p>
+    </div>
+    <div class="hero-status">
+      <span class="pulse-dot"></span>
+      SYSTEM ONLINE
+    </div>
+  </header>
+
+  <section class="control-bar">
+    <div class="control-item"><i data-lucide="radio"></i><div><span>ESP-NOW MESH</span><strong><b>CONNECTED</b> · <em id="meshLatency">5</em> ms</strong></div></div>
+    <div class="control-item"><i data-lucide="video"></i><div><span>WEBCAM SOURCE</span><strong id="cameraStatus">REQUESTING CAMERA…</strong></div></div>
+    <div class="control-item"><i data-lucide="bot"></i><div><span>ACTIVE NODES</span><strong id="activeNodes">03 / 03</strong></div></div>
+    <div class="control-item vision-control"><i data-lucide="scan-eye"></i><div><span>VISION</span><div><button class="vision-btn active" data-mode="RGB">RGB</button><button class="vision-btn" data-mode="UV">UV</button></div></div></div>
+  </section>
+
+  <main class="dashboard-grid">
+    <section class="main-workspace">
+      <div class="section-heading">
+        <div><span class="section-kicker"><i data-lucide="video"></i> LIVE OPTICAL ARRAY</span><h2>BEE-EYE CCTV SURVEILLANCE MATRIX</h2></div>
+        <div class="camera-count"><span class="rec-dot"></span> 06 LIVE WEBCAM VIEWS</div>
+      </div>
+
+      <div class="cctv-wall">
+        <article class="camera-card" data-camera="1"><div class="camera-header"><span><span class="rec-dot"></span> CAM-01</span><span>BEE-01 / FRONT</span></div><div class="camera-screen"><video class="webcam-feed" autoplay muted playsinline></video><div class="camera-vignette"></div><div class="hex-optics"></div><div class="detection-box box-one"><b>FLOWER-07</b><span>STIGMA · 96.4%</span></div><div class="camera-overlay"><span>LIVE / YOLOV8 TARGET LOCK</span><span class="cam-time">00:00:00</span></div><div class="hud tl">ALT <b class="alt">24.8</b>cm</div><div class="hud bl">BAT <b class="bat">97</b>%</div><div class="hud br">FORCE <b class="force">2.4</b>mN</div></div></article>
+        <article class="camera-card" data-camera="2"><div class="camera-header"><span><span class="rec-dot"></span> CAM-02</span><span>BEE-01 / SIDE</span></div><div class="camera-screen"><video class="webcam-feed" autoplay muted playsinline></video><div class="camera-vignette"></div><div class="hex-optics"></div><div class="detection-box box-two"><b>FLOWER-12</b><span>ANTHER · 94.8%</span></div><div class="camera-overlay"><span>LIVE / UV NECTAR GUIDE</span><span class="cam-time">00:00:00</span></div><div class="hud tl">ALT <b class="alt">31.2</b>cm</div><div class="hud bl">BAT <b class="bat">93</b>%</div><div class="hud br">FORCE <b class="force">3.1</b>mN</div></div></article>
+        <article class="camera-card" data-camera="3"><div class="camera-header"><span><span class="rec-dot"></span> CAM-03</span><span>BEE-02 / FRONT</span></div><div class="camera-screen"><video class="webcam-feed" autoplay muted playsinline></video><div class="camera-vignette"></div><div class="hex-optics"></div><div class="detection-box box-three"><b>FLOWER-03</b><span>STIGMA · 98.1%</span></div><div class="camera-overlay"><span>LIVE / AI TRACKING</span><span class="cam-time">00:00:00</span></div><div class="hud tl">ALT <b class="alt">18.7</b>cm</div><div class="hud bl">BAT <b class="bat">89</b>%</div><div class="hud br">FORCE <b class="force">1.8</b>mN</div></div></article>
+        <article class="camera-card" data-camera="4"><div class="camera-header"><span><span class="rec-dot"></span> CAM-04</span><span>BEE-02 / REAR</span></div><div class="camera-screen"><video class="webcam-feed" autoplay muted playsinline></video><div class="camera-vignette"></div><div class="hex-optics"></div><div class="detection-box box-four"><b>FLOWER-09</b><span>NECTAR · 91.7%</span></div><div class="camera-overlay"><span>LIVE / MOTION TRACK</span><span class="cam-time">00:00:00</span></div><div class="hud tl">ALT <b class="alt">26.4</b>cm</div><div class="hud bl">BAT <b class="bat">84</b>%</div><div class="hud br">FORCE <b class="force">2.7</b>mN</div></div></article>
+        <article class="camera-card" data-camera="5"><div class="camera-header"><span><span class="rec-dot"></span> CAM-05</span><span>BEE-03 / FRONT</span></div><div class="camera-screen"><video class="webcam-feed" autoplay muted playsinline></video><div class="camera-vignette"></div><div class="hex-optics"></div><div class="detection-box box-five"><b>FLOWER-21</b><span>STIGMA · 97.6%</span></div><div class="camera-overlay"><span>LIVE / SWARM TARGET</span><span class="cam-time">00:00:00</span></div><div class="hud tl">ALT <b class="alt">22.1</b>cm</div><div class="hud bl">BAT <b class="bat">78</b>%</div><div class="hud br">FORCE <b class="force">4.2</b>mN</div></div></article>
+        <article class="camera-card" data-camera="6"><div class="camera-header"><span><span class="rec-dot"></span> CAM-06</span><span>BEE-03 / SIDE</span></div><div class="camera-screen"><video class="webcam-feed" autoplay muted playsinline></video><div class="camera-vignette"></div><div class="hex-optics"></div><div class="detection-box box-six"><b>FLOWER-17</b><span>ANTHER · 95.2%</span></div><div class="camera-overlay"><span>LIVE / POLLINATION ZONE</span><span class="cam-time">00:00:00</span></div><div class="hud tl">ALT <b class="alt">34.5</b>cm</div><div class="hud bl">BAT <b class="bat">72</b>%</div><div class="hud br">FORCE <b class="force">3.6</b>mN</div></div></article>
+      </div>
+
+      <section class="navigation-panel">
+        <div class="section-heading compact"><div><span class="section-kicker"><i data-lucide="map"></i> SWARM NAVIGATION</span><h2>HEX-SPATIAL FLORAL MAP</h2></div><div class="map-legend">● BEE &nbsp; ● UV TARGET &nbsp; ┄ TRAJECTORY</div></div>
+        <div class="map-wrapper"><canvas id="navigationCanvas"></canvas><div class="map-coordinates">X:<b id="mapX">142.4</b> Y:<b id="mapY">87.6</b> Z:<b id="mapZ">24.8</b>cm</div></div>
+      </section>
+    </section>
+
+    <aside class="analytics-sidebar">
+      <section class="analytics-card"><div class="card-heading"><span>MISSION OUTPUT</span><i data-lucide="flower-2"></i></div><div class="pollination-number" id="pollinatedCount">127</div><div class="pollination-label">FLOWERS POLLINATED</div><div class="progress-line"><span></span></div><div class="stat-row"><span>MISSION TARGET</span><b>175</b></div><div class="stat-row"><span>SUCCESS RATE</span><b class="cyan-text">94.8%</b></div></section>
+
+      <section class="analytics-card"><div class="card-heading"><span>CONTACT FORCE</span><i data-lucide="hand"></i></div><div class="force-display"><strong id="mainForce">2.8</strong><span>mN</span><b id="forceStatus">SAFE</b></div><div class="force-meter"><span id="forceNeedle"></span></div><div class="force-scale"><span>0</span><span>2.5</span><span>5</span><span>7.5</span><span>10+</span></div><p class="threshold-text">Maximum stigma contact threshold: <b>5 mN</b></p></section>
+
+      <section class="analytics-card"><div class="card-heading"><span>SWARM TELEMETRY</span><i data-lucide="activity"></i></div>
+        <div class="swarm-node"><span>BEE-01</span><div class="node-bar"><i id="beeBattery1"></i></div><b id="beeBatteryText1">97%</b></div>
+        <div class="swarm-node"><span>BEE-02</span><div class="node-bar"><i id="beeBattery2"></i></div><b id="beeBatteryText2">89%</b></div>
+        <div class="swarm-node"><span>BEE-03</span><div class="node-bar"><i id="beeBattery3"></i></div><b id="beeBatteryText3">78%</b></div>
+      </section>
+
+      <section class="analytics-card terminal-card"><div class="card-heading"><span>EDGE MISSION TERMINAL</span><b class="terminal-status">LIVE</b></div><div class="terminal" id="missionTerminal"></div></section>
+    </aside>
+  </main>
+
+  <footer class="system-footer">NECTAR-X AUTONOMOUS POLLINATION SYSTEM <span>WEBCAM × 6 / YOLOV8 / ESP-NOW / UV VISION</span><span><span class="pulse-dot"></span> ALL SYSTEMS NOMINAL</span></footer>
+</div>
+<script type="module" src="./app.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>
